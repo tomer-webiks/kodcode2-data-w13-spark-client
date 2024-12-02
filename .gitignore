@@ -1,0 +1,68 @@
+# Python Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+env/
+venv/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Python Specific
+*.egg-info/
+*.egg
+*.pyo
+*.pyd
+*.whl
+*.manifest
+*.spec
+
+# Python Tests
+.coverage
+.tox/
+.cache/
+.pytest_cache/
+*.log
+
+# Distribution / Packaging
+build/
+dist/
+*.tar.gz
+*.zip
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# IDE Files
+.vscode/
+.idea/
+*.sublime-workspace
+
+# Docker
+docker-compose.override.yml
+.dockerignore
+**/.env  # Do not commit sensitive information (environment variables)
+
+# Logs
+*.log
+logs/
+*.pid
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Temporary Files
+*.tmp
+*.temp
+*.swp
+*.swo
+*.bak
+
+# Project Files
+*.sqlite3
+*.db
+instance/
