@@ -41,13 +41,22 @@ def test_stream_csv_to_append_json():
     # -- TRANSFORM
     top_rated_df = stream_df.filter(stream_df["Score"] == 5)
 
-    # -- LOAD
+    # -- LOAD - CONSOLE
+    query = top_rated_df.writeStream \
+        .format("console") \
+        .outputMode("append") \
+        .option("path", output_dir) \
+        .option("checkpointLocation", "hdfs://192.168.1.100:8020/reviews/checkpoints/stream1") \
+        .start()
+    
+    # -- LOAD - JSON
     query = top_rated_df.writeStream \
         .format("json") \
         .outputMode("append") \
         .option("path", output_dir) \
         .option("checkpointLocation", "hdfs://192.168.1.100:8020/reviews/checkpoints/stream1") \
         .start()
+    
 
     # Wait for the streaming to finish (Ctrl+C to terminate)
     query.awaitTermination()
